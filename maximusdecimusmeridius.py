@@ -4,10 +4,12 @@ def import_all():
   import matplotlib.pyplot as plt
   import pandas as pd
   from astropy.visualization import ZScaleInterval
+  %matplotlib inline
   from astropy.io import fits 
   import os 
   import glob
   import scipy.ndimage.interpolation as interp
+
 
 def fits_headerinfo(pathlist,headerTag='IMAGETYP'):
   '''
