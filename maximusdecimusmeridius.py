@@ -601,6 +601,8 @@ def masters():
   Output: None
   Description: Creates and sorts all necessary calibration frames
   '''
+  import_all()
+  import glob
   organize_calibration()
   expTimes = darksort()
   flatsort()
