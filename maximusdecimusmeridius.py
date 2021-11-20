@@ -150,7 +150,7 @@ def darksort():
   Output: A list of the unique exposure times as strings
   Description: Sorts the dark files by exposure time into separate folders
   '''
-  os.chdir(‘calibration/darks/‘)
+  os.chdir('calibration/darks/')
   darks = glob.glob('*.fit')
   # Find the exposure times of the darks
   dark_exp = list(set(fits_headerinfo(darks,'EXPTIME')))
@@ -160,7 +160,7 @@ def darksort():
   for fitsfile in darks:
     for i in range(len(dark_exp)):
         fits_filesorter(fitsfile, dark_exp_str[i], dark_exp[i], 'EXPTIME')
-  os.chdir(‘../..’)
+  os.chdir('../..')
   print(dark_exp_str)
   return dark_exp_str
 
@@ -170,14 +170,14 @@ def flatsort():
   Output: None
   Description: Sorts the flats by band into separate folders
   '''
-  os.chdir(‘calibration/flats’)
+  os.chdir('calibration/flats')
   flats = glob.glob('*.fit')
   # sort the flats into their respective subfolders (feel free to add cells as needed)
   for fitsfile in flats:
     fits_filesorter(fitsfile, 'Rband', 'Red', 'FILTER')
     fits_filesorter(fitsfile, 'Vband', 'Visual', 'FILTER')
     fits_filesorter(fitsfile, 'Bband', 'Blue', 'FILTER')
-  os.chdir(‘../..’)
+  os.chdir('../..')
 
 def master_bias():
   '''
@@ -185,14 +185,14 @@ def master_bias():
   Output: None
   Description: Create and write a master bias
   '''
-  os.chdir(‘calibration/biasframes/‘)
+  os.chdir('calibration/biasframes/')
   biasfiles = glob.glob('*.fit')
   # Take the median of the 3-D stack: 
   med_bias = mediancombine(biasfiles)
   # Save your new FITS file!
   fits.writeto('Master_Bias.fit', med_bias, fits.getheader(biasfiles[0]), overwrite=True)
   master_bias_path = os.getcwd() + '/Master_Bias.fit'
-  os.chdir(‘../..’)
+  os.chdir('../..')
 
 def master_darks(dark_exp_str):
   '''
@@ -600,7 +600,7 @@ def calibrate(targ_dict):
     if expTime == 'null': return
     db_subtract(expTime)
     flat_fielding()
-    os.chdir(‘..’)
+    os.chdir('..')
 
 def full_register(datadir,band,region=centcrop(4096,50),objname='null'):
   filtlist = getfiltlist(band,datadir+'/reduced/*.fit')
