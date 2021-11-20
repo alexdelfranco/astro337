@@ -1,10 +1,12 @@
 def import_all():
+  '''
+  Test
+  '''
   import numpy as np
   from tqdm import tqdm
   import matplotlib.pyplot as plt
   import pandas as pd
   from astropy.visualization import ZScaleInterval
-  %matplotlib inline
   from astropy.io import fits 
   import os 
   import glob
