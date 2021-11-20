@@ -1,12 +1,13 @@
-import numpy as np
-from tqdm import tqdm
-import matplotlib.pyplot as plt
-import pandas as pd
-from astropy.visualization import ZScaleInterval
-from astropy.io import fits 
-import os 
-import glob
-import scipy.ndimage.interpolation as interp
+def import():
+  import numpy as np
+  from tqdm import tqdm
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  from astropy.visualization import ZScaleInterval
+  from astropy.io import fits 
+  import os 
+  import glob
+  import scipy.ndimage.interpolation as interp
 
 def fits_headerinfo(pathlist,headerTag='IMAGETYP'):
   '''
