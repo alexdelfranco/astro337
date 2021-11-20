@@ -77,7 +77,6 @@ def organize_calibration():
   Output: None
   Description: Organizes calibration data into separate folders within a calibration folder
   '''
-  import glob
   fits_pathlist = glob.glob('*.fit')
   # Sort calibration data into separate folders:
   for fitsfile in tqdm(fits_pathlist):
@@ -602,8 +601,6 @@ def masters():
   Output: None
   Description: Creates and sorts all necessary calibration frames
   '''
-  import_all()
-  import glob
   organize_calibration()
   expTimes = darksort()
   flatsort()
