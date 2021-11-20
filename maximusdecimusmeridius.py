@@ -1,20 +1,14 @@
-# TESTING
-
-def import_all():
-  '''
-  Test
-  '''
-  print('hi')
-  import numpy as np
-  from tqdm import tqdm
-  import matplotlib.pyplot as plt
-  import pandas as pd
-  from astropy.visualization import ZScaleInterval
-  from astropy.io import fits 
-  import os 
-  import glob
-  import scipy.ndimage.interpolation as interp
-
+import numpy as np
+from tqdm import tqdm
+import matplotlib.pyplot as plt
+import pandas as pd
+from astropy.visualization import ZScaleInterval
+from astropy.io import fits 
+import os 
+import glob
+import scipy.ndimage.interpolation as interp
+%cd astro337/
+import maximusdecimusmeridius
 
 def fits_headerinfo(pathlist,headerTag='IMAGETYP'):
   '''
