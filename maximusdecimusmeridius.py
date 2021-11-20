@@ -7,8 +7,6 @@ from astropy.io import fits
 import os 
 import glob
 import scipy.ndimage.interpolation as interp
-%cd astro337/
-import maximusdecimusmeridius
 
 def fits_headerinfo(pathlist,headerTag='IMAGETYP'):
   '''
