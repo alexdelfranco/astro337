@@ -77,6 +77,7 @@ def organize_calibration():
   Output: None
   Description: Organizes calibration data into separate folders within a calibration folder
   '''
+  import glob
   fits_pathlist = glob.glob('*.fit')
   # Sort calibration data into separate folders:
   for fitsfile in tqdm(fits_pathlist):
